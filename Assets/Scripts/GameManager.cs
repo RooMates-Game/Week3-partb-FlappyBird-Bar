@@ -6,13 +6,15 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] string triggeringTag_GameOver;
     [SerializeField] string triggeringTag_Pipes;
-    public GameObject playButton;
-    public GameObject gameOver;
+    [SerializeField] public GameObject playButton;
+    [SerializeField] public GameObject gameOver;
     Scoring scoring;
+    
+    [SerializeField] private int frameRate = 60;
 
     private void Awake()
     {
-        Application.targetFrameRate = 60;
+        Application.targetFrameRate = frameRate;
         Pause();
     }
 

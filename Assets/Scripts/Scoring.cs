@@ -5,7 +5,7 @@ using TMPro;
 public class Scoring : MonoBehaviour
 {
     [SerializeField] string triggeringTag;
-    public TextMeshProUGUI scoreText;
+    [SerializeField] public TextMeshProUGUI scoreText;
     private int score;
     private void OnTriggerEnter2D(Collider2D other){
         if(triggeringTag == other.tag)
