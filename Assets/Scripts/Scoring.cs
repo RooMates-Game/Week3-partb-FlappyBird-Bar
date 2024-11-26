@@ -16,8 +16,7 @@ public class Scoring : MonoBehaviour
     }
 
     private void Start() {
-        score = 0;
-        scoreText.text = score.ToString();
+        ResetScore();
     }
 
     public void ResetScore()
