@@ -2,27 +2,21 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
+    [SerializeField] public float speed = 5f; // Speed of leftward movement
+    private float leftEdge; // Leftmost boundary for object destruction
+    [SerializeField] private float extraDistanceLeft = 1f; // Extra buffer before destruction
 
-    [SerializeField] public float speed = 5f;
-    // [SerializeField] public GameObject gameOver;
-
-    private float leftEdge;
-
-    [SerializeField] private float extraDistanceLeft = 1f;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - extraDistanceLeft;
+        leftEdge = Camera.main.ScreenToWorldPoint(Vector3.zero).x - extraDistanceLeft; // Calculate destruction boundary
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        transform.position += Vector3.left * speed * Time.deltaTime;
+        transform.position += Vector3.left * speed * Time.deltaTime; // Move the object leftward
 
-        //if the pipe exit the left side screen , then destory it. 
-        if(transform.position.x < leftEdge){
+        if (transform.position.x < leftEdge) // Destroy the object if it moves out of bounds
+        {
             Destroy(gameObject);
         }
     }

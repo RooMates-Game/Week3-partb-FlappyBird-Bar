@@ -1,18 +1,17 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class Parallax : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
+    [SerializeField] private MeshRenderer meshRenderer; // Renderer to manipulate background texture
+    [SerializeField] public float animationSpeed = 1f; // Speed of background scrolling
 
-    [SerializeField] public float animationSpeed = 1f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    private void Awake() {
-        meshRenderer = GetComponent<MeshRenderer>();
+    private void Awake()
+    {
+        meshRenderer = GetComponent<MeshRenderer>(); // Assign the mesh renderer
     }
 
-    // Update is called once per frame
     private void Update()
     {
-        meshRenderer.material.mainTextureOffset += new Vector2(animationSpeed * Time.deltaTime , 0);
+        meshRenderer.material.mainTextureOffset += new Vector2(animationSpeed * Time.deltaTime, 0); // Scroll the texture
     }
 }
