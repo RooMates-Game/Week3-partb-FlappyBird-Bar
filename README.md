@@ -120,4 +120,10 @@ This script manages the overall game flow, including starting, pausing, and rese
 
 ---
 
+## Itch.io
+
+try this game : [Click here!](https://barmud.itch.io/flappybird)
+
+---
+
 Enjoy playing this Flappy Bird clone and tweak the game to your liking! 🎮
