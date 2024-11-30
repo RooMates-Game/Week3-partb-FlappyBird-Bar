@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public GameObject playButton; // UI play button
     [SerializeField] public GameObject gameOver; // UI game-over panel
     Scoring scoring; // Reference to the scoring system
-    
+
     [SerializeField] private int frameRate = 60; // Target frame rate for the game
 
     private void Awake()
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
         // Display game-over UI elements
         gameOver.SetActive(true);
         playButton.SetActive(true);
-        
+
         scoring = Object.FindFirstObjectByType<Scoring>(); // Find the Scoring component
         if (scoring != null)
         {
